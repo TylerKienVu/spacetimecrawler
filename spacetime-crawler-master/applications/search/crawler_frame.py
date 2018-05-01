@@ -2,8 +2,7 @@ import logging
 from datamodel.search.TylerkvRolandf_datamodel import TylerkvRolandfLink, OneTylerkvRolandfUnProcessedLink
 from spacetime.client.IApplication import IApplication
 from spacetime.client.declarations import Producer, GetterSetter, Getter
-# from lxml import html,etree
-import lxml
+from lxml import html,etree
 import re, os
 from time import time
 from uuid import uuid4
