@@ -65,6 +65,16 @@ def extract_next_links(rawDataObj):
     
     Suggested library: lxml
     '''
+    baseHref = rawDataObj.url
+    try:
+        htmlObject = html.document_fromstring(rawDataObj.content)
+        htmlObject.make_links_absolute(baseHref)
+        links = htmlObject.iterlinks()
+        for link in links:
+            outputLinks.append(link[2])
+    except etree.ParserError:
+        print("Caught ParserError")
+
     return outputLinks
 
 def is_valid(url):
