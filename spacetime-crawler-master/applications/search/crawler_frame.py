@@ -40,12 +40,15 @@ class CrawlerFrame(IApplication):
             self.download_links(unprocessed_links)
 
     def download_links(self, unprocessed_links):
+        # print("Current len of unprocessed links: " + str(len(unprocessed_links)))
         for link in unprocessed_links:
             print "Got a link to download:", link.full_url
             downloaded = link.download()
             links = extract_next_links(downloaded)
             for l in links:
+                # print("Valid Check: " + str(l))
                 if is_valid(l):
+                    # print(str(l) + " is valid!")
                     self.frame.add(TylerkvRolandfLink(l))
 
     def shutdown(self):
@@ -66,15 +69,22 @@ def extract_next_links(rawDataObj):
     Suggested library: lxml
     '''
     baseHref = rawDataObj.url
+    finalURL = rawDataObj.final_url
+    if(rawDataObj.is_redirected):
+        print "Checking Link (Redirect): " + finalURL
+    else:
+        print "Checking Link: " + baseHref
     try:
         htmlObject = html.document_fromstring(rawDataObj.content)
         htmlObject.make_links_absolute(baseHref)
         links = htmlObject.iterlinks()
+
         for link in links:
             outputLinks.append(link[2])
-    except etree.ParserError:
-        print("Caught ParserError")
+    except etree.ParserError as e:
+        print ("Parser Error: " + str(e))
 
+    print("URL contained (" + str(len(outputLinks)) + ") links")
     return outputLinks
 
 def is_valid(url):
