@@ -5,7 +5,6 @@ from spacetime.client.declarations import Producer, GetterSetter, Getter
 from lxml import html,etree
 import re, os
 from time import time
-from uuid import uuid4
 
 from urlparse import urlparse, parse_qs
 from uuid import uuid4
@@ -100,20 +99,22 @@ def is_valid(url, badUrl):
     parsed = urlparse(url)
 
 
-    if parsed.path == "/calander.php":
-        print("-------------------------------------------")
-        print(parsed.geturl())
-
-
     # checks if the url is really long
     if len(parsed.geturl()) >= 256:
         return False
-    # if path is called more than 10 times it wont be checked anymore (don't think
-    # this is correct because ics.uci.edu/news is called multiple times.
-    print(parsed)
-    # badUrl[(parsed.hostname + parsed.path)] += 1
-    # if badUrl[(parsed.hostname + parsed.path)] >= 10:
-    #     return False
+
+    # Checks for reacquiring path names.
+    splitPaths = defaultdict(int)
+    for path in parsed.path[1:].lower().split():
+        splitPaths[path] += 1
+        if splitPaths[path] > 2:
+            return False
+
+    if parsed.query != "":
+        qs = parse_qs(parsed.query)
+        print(qs)
+
+
 
     if parsed.scheme not in set(["http", "https"]):
         return False
@@ -124,8 +125,6 @@ def is_valid(url, badUrl):
             + "|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso|epub|dll|cnf|tgz|sha1" \
             + "|thmx|mso|arff|rtf|jar|csv"\
             + "|rm|smil|wmv|swf|wma|zip|rar|gz|pdf)$", parsed.path.lower()):
-            print("------------------------------")
-            print(parsed.geturl())
             return True
 
     except TypeError:
