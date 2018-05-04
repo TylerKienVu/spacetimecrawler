@@ -10,6 +10,8 @@ from uuid import uuid4
 from urlparse import urlparse, parse_qs
 from uuid import uuid4
 
+from collections import defaultdict
+
 logger = logging.getLogger(__name__)
 LOG_HEADER = "[CRAWLER]"
 
@@ -17,6 +19,7 @@ LOG_HEADER = "[CRAWLER]"
 @GetterSetter(OneTylerkvRolandfUnProcessedLink)
 class CrawlerFrame(IApplication):
     app_id = "TylerkvRolandf"
+    badUrls = defaultdict(int)
 
     def __init__(self, frame):
         self.app_id = "TylerkvRolandf"
@@ -47,7 +50,7 @@ class CrawlerFrame(IApplication):
             links = extract_next_links(downloaded)
             for l in links:
                 # print("Valid Check: " + str(l))
-                if is_valid(l):
+                if is_valid(l, self.badUrls):
                     # print(str(l) + " is valid!")
                     self.frame.add(TylerkvRolandfLink(l))
 
@@ -87,7 +90,7 @@ def extract_next_links(rawDataObj):
     print("URL contained (" + str(len(outputLinks)) + ") links")
     return outputLinks
 
-def is_valid(url):
+def is_valid(url, badUrl):
     '''
     Function returns True or False based on whether the url has to be
     downloaded or not.
@@ -95,15 +98,22 @@ def is_valid(url):
     This is a great place to filter out crawler traps.
     '''
     parsed = urlparse(url)
+    if parsed.query != '':
+        print("------------------------------------")
+        print(parsed.hostname + parsed.path + "?" + parsed.query)
     if parsed.scheme not in set(["http", "https"]):
         return False
     try:
-        return ".ics.uci.edu" in parsed.hostname \
+        if ".ics.uci.edu" in parsed.hostname \
             and not re.match(".*\.(css|js|bmp|gif|jpe?g|ico" + "|png|tiff?|mid|mp2|mp3|mp4"\
             + "|wav|avi|mov|mpeg|ram|m4v|mkv|ogg|ogv|pdf" \
             + "|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso|epub|dll|cnf|tgz|sha1" \
             + "|thmx|mso|arff|rtf|jar|csv"\
-            + "|rm|smil|wmv|swf|wma|zip|rar|gz|pdf)$", parsed.path.lower())
+            + "|rm|smil|wmv|swf|wma|zip|rar|gz|pdf)$", parsed.path.lower()):
+            badurl[parsed.hostname + parsed.path] += 1
+            if badUrl[parsed.hostname + parsed.path] >= 10:
+                return False
+            return True
 
     except TypeError:
         print ("TypeError for ", parsed)
