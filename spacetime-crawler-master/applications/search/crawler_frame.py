@@ -97,25 +97,6 @@ def is_valid(url, badUrl):
     This is a great place to filter out crawler traps.
     '''
     parsed = urlparse(url)
-
-
-    # checks if the url is really long
-    if len(parsed.geturl()) >= 256:
-        return False
-
-    # Checks for reacquiring path names.
-    splitPaths = defaultdict(int)
-    for path in parsed.path[1:].lower().split():
-        splitPaths[path] += 1
-        if splitPaths[path] > 2:
-            return False
-
-    if parsed.query != "":
-        qs = parse_qs(parsed.query)
-        print(qs)
-
-
-
     if parsed.scheme not in set(["http", "https"]):
         return False
     try:
@@ -125,6 +106,25 @@ def is_valid(url, badUrl):
             + "|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso|epub|dll|cnf|tgz|sha1" \
             + "|thmx|mso|arff|rtf|jar|csv"\
             + "|rm|smil|wmv|swf|wma|zip|rar|gz|pdf)$", parsed.path.lower()):
+
+            # checks if the url is really long
+            if len(parsed.geturl()) >= 256:
+                return False
+
+            # Checks for reacquiring path names.
+
+            splitPaths = defaultdict(int)
+            for path in parsed.path[1:].lower().split():
+                splitPaths[path] += 1
+                if splitPaths[path] > 2:
+                    return False
+                
+            #     Checks if the url is calling to the same path over and over again.
+            urlPath = parsed.hostname + parsed.path
+            badUrl[urlPath] += 1
+            if badUrl[urlPath] >= 10:
+                return False
+
             return True
 
     except TypeError:
