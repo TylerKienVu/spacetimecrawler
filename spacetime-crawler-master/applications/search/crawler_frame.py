@@ -18,11 +18,12 @@ LOG_HEADER = "[CRAWLER]"
 @GetterSetter(OneTylerkvRolandfUnProcessedLink)
 class CrawlerFrame(IApplication):
     app_id = "TylerkvRolandf"
-    badUrls = defaultdict(int)
 
     def __init__(self, frame):
         self.app_id = "TylerkvRolandf"
         self.frame = frame
+        self.badUrls = defaultdict(int)
+        self.mostOutLinksPage = ("",0)
 
 
     def initialize(self):
@@ -46,7 +47,7 @@ class CrawlerFrame(IApplication):
         for link in unprocessed_links:
             print "Got a link to download:", link.full_url
             downloaded = link.download()
-            links = extract_next_links(downloaded)
+            links = extract_next_links(downloaded, self.mostOutLinksPage)
             for l in links:
                 # print("Valid Check: " + str(l))
                 if is_valid(l, self.badUrls):
@@ -57,8 +58,31 @@ class CrawlerFrame(IApplication):
         print (
             "Time time spent this session: ",
             time() - self.starttime, " seconds.")
+
+        print ("Writing analytics to 'analytics.txt' ...")
+        infile = open("analytics.txt","w")
+        infile.write("----- Subdomain Analytics ----\n")
+
+        #dict to keep track of processed links for subdomain
+        subdomainLinkCounts = defaultdict(int)
+
+        #total up links for subdomain
+        for key in self.badURLs:
+            if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
+                subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
+                subdomainLinkCounts[subdomain] += self.badUrls[key]
+
+        for key in subdomainLinkCounts:
+            infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
+
+        #page with most outlinks
+        infile.write("---- Page with most out links ----\n")
+        infile.write("URL: " + str(self.mostOutLinksPage[0] + "\n"))
+        infile.write("Number of Links: " + str(self.mostOutLinksPage[1] + "\n"))
+
+        infile.close()
     
-def extract_next_links(rawDataObj):
+def extract_next_links(rawDataObj, mostOutLinksPage):
     outputLinks = []
     '''
     rawDataObj is an object of type UrlResponse declared at L20-30
@@ -87,6 +111,11 @@ def extract_next_links(rawDataObj):
         print ("Parser Error: " + str(e))
 
     print("URL contained (" + str(len(outputLinks)) + ") links")
+
+    #for output link analytic
+    if len(outputLinks) > mostOutLinksPage[1]:
+        mostOutLinksPage = (rawDataObj.final_url,len(outputLinks))
+
     return outputLinks
 
 def is_valid(url, badUrl):
@@ -126,6 +155,8 @@ def is_valid(url, badUrl):
                 return False
 
             return True
+        else:
+            return False
 
     except TypeError:
         print ("TypeError for ", parsed)
