@@ -101,10 +101,8 @@ class CrawlerFrame(IApplication):
 
             #page with most outlinks
             infile.write("---- Page with most out links ----\n")
-            infile.write("URL: " + str(mostOutLinksPage[0] + "\n"))
+            infile.write("URL: " + str(mostOutLinksPage[0]) + "\n")
             infile.write("Number of Links: " + str(mostOutLinksPage[1]) + "\n")
-        except Exception as e:
-            print(e)
         finally:
             # try:
             #     print ("Finished writing analytics...")
