@@ -85,6 +85,8 @@ class CrawlerFrame(IApplication):
             infile = open("analytics.txt","w")
             infile.write("----- Subdomain Analytics ----\n")
 
+            # test = visitedSubdomains
+
             #dict to keep track of processed links for subdomain
             subdomainLinkCounts = defaultdict(int)
 
@@ -92,7 +94,7 @@ class CrawlerFrame(IApplication):
             for key in visitedSubdomains:
                 if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
                     subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
-                    subdomainLinkCounts[subdomain] += len(self.visitedSubdomains[key])
+                subdomainLinkCounts[subdomain] = visitedSubdomains[key]
 
             for key in subdomainLinkCounts:
                 infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
@@ -101,8 +103,8 @@ class CrawlerFrame(IApplication):
             infile.write("---- Page with most out links ----\n")
             infile.write("URL: " + str(mostOutLinksPage[0] + "\n"))
             infile.write("Number of Links: " + str(mostOutLinksPage[1]) + "\n")
-        except:
-            pass
+        except Exception as e:
+            print(e)
         finally:
             # try:
             #     print ("Finished writing analytics...")
