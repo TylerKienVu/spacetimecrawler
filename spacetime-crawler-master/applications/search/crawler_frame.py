@@ -150,7 +150,7 @@ def extract_next_links(rawDataObj):
     #for output link analytic
     global mostOutLinksPage
     if len(outputLinks) > mostOutLinksPage[1]:
-        mostOutLinksPage = (rawDataObj.final_url,len(outputLinks))
+        mostOutLinksPage = (rawDataObj.url,len(outputLinks))
 
     return outputLinks
 

@@ -13,21 +13,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="crawler_frame.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crawler_frame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3125">
-              <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+            <state relative-caret-position="303">
+              <caret line="151" column="46" lean-forward="true" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analytics.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="analytics.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/analytics.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
-              <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -715,18 +715,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/analytics.txt">
+    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        <state relative-caret-position="303">
+          <caret line="151" column="46" lean-forward="true" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
+    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/analytics.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3125">
-          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
