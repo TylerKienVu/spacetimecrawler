@@ -366,9 +366,17 @@ class ClientFrame(IFrame):  # pylint: disable=R0902
                 self._shutdown()
                 self._push()
                 self._unregister_app()
-            except:
-                self.logger.exception("An unknown error occurred.")
-                raise
+
+            except KeyboardInterrupt, e:
+                self._pull()
+                self._shutdown()
+                self._push()
+                self._unregister_app()
+                print("custom except in funciton _run in file frame.py was executed")
+
+            # except:
+            #     self.logger.exception("An unknown error occurred.")
+            #     raise
         else:
             self.logger.info("Could not register, exiting run loop...")
 

@@ -22,7 +22,7 @@ class CrawlerFrame(IApplication):
     def __init__(self, frame):
         self.app_id = "TylerkvRolandf"
         self.frame = frame
-        self.goodUrls = defaultdict(int)
+        self.visitedUrls = defaultdict(int)
         self.mostOutLinksPage = ("",0)
         self.starttime = time()
 
@@ -48,16 +48,22 @@ class CrawlerFrame(IApplication):
         for link in unprocessed_links:
             print "Got a link to download:", link.full_url
             downloaded = link.download()
+
+            #adds the subdomain of the url visited to the dictionary of visited urls
+            splitDomain = urlparse(downloaded.url).netloc.split('.')
+            subdomain = "".join(splitDomain) if splitDomain != 'www' else "".join(splitDomain[1:])
+            self.visitedUrls[subdomain] += 1
+
             links = extract_next_links(downloaded, self.mostOutLinksPage)
             for l in links:
-                if is_valid(l, self.goodUrls):
+                if is_valid(l):
                     self.frame.add(TylerkvRolandfLink(l))
 
     def shutdown(self):
         print (
             "Time time spent this session: ",
             time() - self.starttime, " seconds.")
-        print(self.goodUrls)
+        print(self.visitedUrls)
 
         try:
             print ("Writing analytics to 'analytics.txt' ...")
@@ -68,7 +74,7 @@ class CrawlerFrame(IApplication):
             subdomainLinkCounts = defaultdict(int)
 
             #total up links for subdomain
-            for key in self.goodUrls:
+            for key in self.visitedUrls:
                 if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
                     subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
                     subdomainLinkCounts[subdomain] += len(self.badUrls[key])
@@ -126,7 +132,7 @@ def extract_next_links(rawDataObj, mostOutLinksPage):
 
     return outputLinks
 
-def is_valid(url, goodUrl):
+def is_valid(url):
     '''
     Function returns True or False based on whether the url has to be
     downloaded or not.
@@ -169,9 +175,9 @@ def is_valid(url, goodUrl):
                 return False
 
 
-            splitDomain = parsed.netloc.split('.')
-            subdomain = splitDomain[0] if splitDomain != 'www' else splitDomain[1]
-            goodUrl[subdomain] += 1
+            # splitDomain = parsed.netloc.split('.')
+            #             # subdomain = "".join(splitDomain) if splitDomain != 'www' else "".join(splitDomain[1:])
+            #             # goodUrl[subdomain] += 1
             # #     Checks if the url is calling to the same path over and over again.
             # if parsed.query != "":
             #     urlPath = parsed.hostname + parsed.path
