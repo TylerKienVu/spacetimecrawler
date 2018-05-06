@@ -22,8 +22,9 @@ class CrawlerFrame(IApplication):
     def __init__(self, frame):
         self.app_id = "TylerkvRolandf"
         self.frame = frame
-        self.badUrls = defaultdict(int)
+        self.goodUrls = defaultdict(int)
         self.mostOutLinksPage = ("",0)
+        self.starttime = time()
 
 
     def initialize(self):
@@ -58,29 +59,35 @@ class CrawlerFrame(IApplication):
         print (
             "Time time spent this session: ",
             time() - self.starttime, " seconds.")
+        print(self.badUrls)
 
-        print ("Writing analytics to 'analytics.txt' ...")
-        infile = open("analytics.txt","w")
-        infile.write("----- Subdomain Analytics ----\n")
-
-        #dict to keep track of processed links for subdomain
-        subdomainLinkCounts = defaultdict(int)
-
-        #total up links for subdomain
-        for key in self.badURLs:
-            if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
-                subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
-                subdomainLinkCounts[subdomain] += self.badUrls[key]
-
-        for key in subdomainLinkCounts:
-            infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
-
-        #page with most outlinks
-        infile.write("---- Page with most out links ----\n")
-        infile.write("URL: " + str(self.mostOutLinksPage[0] + "\n"))
-        infile.write("Number of Links: " + str(self.mostOutLinksPage[1] + "\n"))
-
-        infile.close()
+        # try:
+        #     print ("Writing analytics to 'analytics.txt' ...")
+        #     infile = open("analytics.txt","w")
+        #     infile.write("----- Subdomain Analytics ----\n")
+        #
+        #     #dict to keep track of processed links for subdomain
+        #     subdomainLinkCounts = defaultdict(int)
+        #
+        #     #total up links for subdomain
+        #     print(self.badUrls)
+        #     for key in self.badUrls:
+        #         print(key)
+        #         if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
+        #             subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
+        #             subdomainLinkCounts[subdomain] += len(self.badUrls[key])
+        #
+        #     for key in subdomainLinkCounts:
+        #         infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
+        #
+        #     #page with most outlinks
+        #     infile.write("---- Page with most out links ----\n")
+        #     infile.write("URL: " + str(self.mostOutLinksPage[0] + "\n"))
+        #     infile.write("Number of Links: " + str(self.mostOutLinksPage[1]) + "\n")
+        # except:
+        #     pass
+        # finally:
+        #     infile.close()
     
 def extract_next_links(rawDataObj, mostOutLinksPage):
     outputLinks = []
@@ -96,10 +103,13 @@ def extract_next_links(rawDataObj, mostOutLinksPage):
     '''
     baseHref = rawDataObj.url
     finalURL = rawDataObj.final_url
-    if(rawDataObj.is_redirected):
-        print "Checking Link (Redirect): " + finalURL
-    else:
-        print "Checking Link: " + baseHref
+    try:
+        if(rawDataObj.is_redirected):
+            print "Checking Link (Redirect): " + finalURL
+        else:
+            print "Checking Link: " + baseHref
+    except:
+        pass
     try:
         htmlObject = html.document_fromstring(rawDataObj.content)
         htmlObject.make_links_absolute(baseHref)
@@ -118,7 +128,7 @@ def extract_next_links(rawDataObj, mostOutLinksPage):
 
     return outputLinks
 
-def is_valid(url, badUrl):
+def is_valid(url, goodUrl):
     '''
     Function returns True or False based on whether the url has to be
     downloaded or not.
@@ -136,6 +146,10 @@ def is_valid(url, badUrl):
             + "|thmx|mso|arff|rtf|jar|csv"\
             + "|rm|smil|wmv|swf|wma|zip|rar|gz|pdf)$", parsed.path.lower()):
 
+            # checks if the url contains calender information on it.
+            if re.search('calendar', parsed.geturl()):
+                return False
+
             # checks if the url is really long
             if len(parsed.geturl()) >= 256:
                 return False
@@ -147,12 +161,26 @@ def is_valid(url, badUrl):
                 splitPaths[path] += 1
                 if splitPaths[path] > 2:
                     return False
-                
-            #     Checks if the url is calling to the same path over and over again.
-            urlPath = parsed.hostname + parsed.path
-            badUrl[urlPath] += 1
-            if badUrl[urlPath] >= 10:
+
+            #checks if the url contains fragments Ex. https://wics.ics.uci.edu/category/news/?afg78_page_id=2#afg-78
+            if parsed.fragment != "":
                 return False
+
+            # check if the url has % in the query
+            if re.search('%.+', parsed.query):
+                return False
+
+
+            splitDomain = parsed.netloc.split('.')
+            subdomain = splitDomain[0] if splitDomain != 'www' else splitDomain[1]
+            goodUrl[subdomain] += 1
+            # #     Checks if the url is calling to the same path over and over again.
+            # if parsed.query != "":
+            #     urlPath = parsed.hostname + parsed.path
+            #     badUrl[urlPath].append(parsed.path + parsed.query)
+            #     print(badUrl)
+            #     if len(badUrl[urlPath]) >= 10:
+            #         return False
 
             return True
         else:
