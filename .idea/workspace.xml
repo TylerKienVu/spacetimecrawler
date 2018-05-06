@@ -4,6 +4,7 @@
     <list default="true" id="5d22f86c-4661-4a54-b65b-99753e105d5c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py" afterPath="$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/server_datamodel.py" afterPath="$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/server_datamodel.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,58 +18,18 @@
       <file leaf-file-name="crawler_frame.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-174">
-              <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+            <state relative-caret-position="-1092">
+              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="httplib.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/httplib.py">
+      <file leaf-file-name="analytics.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analytics.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="1131" column="0" lean-forward="false" selection-start-line="1131" selection-start-column="0" selection-end-line="1131" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connectionpool.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/urllib3/connectionpool.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="733" column="0" lean-forward="false" selection-start-line="733" selection-start-column="0" selection-end-line="733" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adapters.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/requests/adapters.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="524" column="0" lean-forward="false" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sessions.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/requests/sessions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="554" column="0" lean-forward="false" selection-start-line="554" selection-start-column="0" selection-end-line="554" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spacetime.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/spacetime/connectors/spacetime.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="356" column="0" lean-forward="false" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
+            <state relative-caret-position="21">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,31 +38,9 @@
       <file leaf-file-name="crawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-411">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+            <state relative-caret-position="638">
+              <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frame.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/spacetime/client/frame.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7161">
-              <caret line="352" column="50" lean-forward="true" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="check_frontier.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/check_frontier.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="66" column="32" lean-forward="false" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -109,11 +48,21 @@
       <file leaf-file-name="reset_frontier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/reset_frontier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1491">
-              <caret line="76" column="44" lean-forward="false" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
+            <state relative-caret-position="525">
+              <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server_datamodel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/server_datamodel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="162" column="20" lean-forward="false" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,10 +80,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler.py" />
         <option value="$PROJECT_DIR$/spacetime-crawler-master/applications/search/check_frontier.py" />
         <option value="$PROJECT_DIR$/spacetime-crawler-master/applications/search/reset_frontier.py" />
+        <option value="$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler.py" />
+        <option value="$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/server_datamodel.py" />
         <option value="$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py" />
+        <option value="$PROJECT_DIR$/analytics.txt" />
       </list>
     </option>
   </component>
@@ -249,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.crawler">
+  <component name="RunManager" selected="Python.reset_frontier">
     <configuration name="check_frontier" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -308,8 +259,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.crawler" />
-        <item index="1" class="java.lang.String" itemvalue="Python.reset_frontier" />
+        <item index="0" class="java.lang.String" itemvalue="Python.reset_frontier" />
+        <item index="1" class="java.lang.String" itemvalue="Python.crawler" />
         <item index="2" class="java.lang.String" itemvalue="Python.check_frontier" />
       </list>
     </recent_temporary>
@@ -334,11 +285,11 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28958333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30911064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30911064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37852496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37852496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36008677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -374,19 +325,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="83" column="4" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1617">
@@ -407,7 +350,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3696">
           <caret line="187" column="18" lean-forward="false" selection-start-line="187" selection-start-column="18" selection-end-line="187" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1525640695344" expanded="true" signature="10348:11925" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="11829:11839" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="11951:12016" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12038:12806" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12198:12603" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12211:12338" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12682:12806" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12858:13085" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12892:13085" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13109:13136" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13158:13949" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13298:13866" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13395:13536" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13730:13866" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13975:14140" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13984:14111" ph="&quot;&quot;&quot;_shutdown...&quot;&quot;&quot;" />
+            <marker date="1525640695344" expanded="true" signature="14163:14267" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14289:14412" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14298:14382" ph="&quot;&quot;&quot;_stop...&quot;&quot;&quot;" />
+            <marker date="1525640695344" expanded="true" signature="14444:14695" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14484:14600" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14602:14695" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14767:14983" ph="&quot;&quot;&quot;Set up the loggers for this client frame....&quot;&quot;&quot;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +507,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3696">
           <caret line="187" column="18" lean-forward="false" selection-start-line="187" selection-start-column="18" selection-end-line="187" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1525640695344" expanded="true" signature="10348:11925" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="11829:11839" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="11951:12016" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12038:12806" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12198:12603" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12211:12338" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12682:12806" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12858:13085" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12892:13085" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13109:13136" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13158:13949" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13298:13866" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13395:13536" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13730:13866" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13975:14140" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13984:14111" ph="&quot;&quot;&quot;_shutdown...&quot;&quot;&quot;" />
+            <marker date="1525640695344" expanded="true" signature="14163:14267" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14289:14412" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14298:14382" ph="&quot;&quot;&quot;_stop...&quot;&quot;&quot;" />
+            <marker date="1525640695344" expanded="true" signature="14444:14695" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14484:14600" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14602:14695" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14767:14983" ph="&quot;&quot;&quot;Set up the loggers for this client frame....&quot;&quot;&quot;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -623,16 +614,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/frontier_summary.txt" />
-    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/reset_frontier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1491">
-          <caret line="76" column="44" lean-forward="false" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/Robot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-73">
@@ -665,13 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/server_datamodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="154" column="12" lean-forward="true" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -717,7 +691,7 @@
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/requests/adapters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="382">
           <caret line="524" column="0" lean-forward="false" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
           <folding />
         </state>
@@ -743,22 +717,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7161">
           <caret line="352" column="50" lean-forward="true" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
+          <folding>
+            <marker date="1525640695344" expanded="true" signature="10348:11925" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="11829:11839" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="11951:12016" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12038:12806" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12198:12603" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12211:12338" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12682:12806" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12858:13085" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="12892:13085" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13109:13136" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13158:13949" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13298:13866" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13395:13536" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13730:13866" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13975:14140" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="13984:14111" ph="&quot;&quot;&quot;_shutdown...&quot;&quot;&quot;" />
+            <marker date="1525640695344" expanded="true" signature="14163:14267" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14289:14412" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14298:14382" ph="&quot;&quot;&quot;_stop...&quot;&quot;&quot;" />
+            <marker date="1525640695344" expanded="true" signature="14444:14695" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14484:14600" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14602:14695" ph="..." />
+            <marker date="1525640695344" expanded="true" signature="14767:14983" ph="&quot;&quot;&quot;Set up the loggers for this client frame....&quot;&quot;&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/datamodel/search/server_datamodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="162" column="20" lean-forward="false" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        <state relative-caret-position="638">
+          <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/reset_frontier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analytics.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spacetime-crawler-master/applications/search/crawler_frame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+        <state relative-caret-position="-1092">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -157,7 +157,10 @@ class Link(object):
         url = self.full_url
         self.download_complete = True
         if self.raw_content != None:
-            print ("Downloading " + url + " from cache.")
+            try:
+                print ("Downloading " + url + " from cache.")
+            except IOError:
+                pass
             return UrlResponse(
                 url, self.raw_content, self.error_reason, self.http_code,
                 self.http_headers, self.is_redirected, self.final_url)
