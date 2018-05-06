@@ -94,7 +94,7 @@ class CrawlerFrame(IApplication):
             for key in visitedSubdomains:
                 if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
                     subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
-                subdomainLinkCounts[subdomain] = visitedSubdomains[key]
+                    subdomainLinkCounts[subdomain] = visitedSubdomains[key]
 
             for key in subdomainLinkCounts:
                 infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
