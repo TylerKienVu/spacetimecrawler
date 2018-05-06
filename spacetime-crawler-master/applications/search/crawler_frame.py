@@ -50,44 +50,42 @@ class CrawlerFrame(IApplication):
             downloaded = link.download()
             links = extract_next_links(downloaded, self.mostOutLinksPage)
             for l in links:
-                # print("Valid Check: " + str(l))
-                if is_valid(l, self.badUrls):
-                    # print(str(l) + " is valid!")
+                if is_valid(l, self.goodUrls):
                     self.frame.add(TylerkvRolandfLink(l))
 
     def shutdown(self):
         print (
             "Time time spent this session: ",
             time() - self.starttime, " seconds.")
-        print(self.badUrls)
+        print(self.goodUrls)
 
-        # try:
-        #     print ("Writing analytics to 'analytics.txt' ...")
-        #     infile = open("analytics.txt","w")
-        #     infile.write("----- Subdomain Analytics ----\n")
-        #
-        #     #dict to keep track of processed links for subdomain
-        #     subdomainLinkCounts = defaultdict(int)
-        #
-        #     #total up links for subdomain
-        #     print(self.badUrls)
-        #     for key in self.badUrls:
-        #         print(key)
-        #         if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
-        #             subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
-        #             subdomainLinkCounts[subdomain] += len(self.badUrls[key])
-        #
-        #     for key in subdomainLinkCounts:
-        #         infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
-        #
-        #     #page with most outlinks
-        #     infile.write("---- Page with most out links ----\n")
-        #     infile.write("URL: " + str(self.mostOutLinksPage[0] + "\n"))
-        #     infile.write("Number of Links: " + str(self.mostOutLinksPage[1]) + "\n")
-        # except:
-        #     pass
-        # finally:
-        #     infile.close()
+        try:
+            print ("Writing analytics to 'analytics.txt' ...")
+            infile = open("analytics.txt","w")
+            infile.write("----- Subdomain Analytics ----\n")
+
+            #dict to keep track of processed links for subdomain
+            subdomainLinkCounts = defaultdict(int)
+
+            #total up links for subdomain
+            for key in self.goodUrls:
+                if key.find(".ics.uci.edu") != -1: #example: ngs.ics.ucu.edu
+                    subdomain = key[0:key.index(".ics.uci.edu")] #the subdomain will be 'ngs'
+                    subdomainLinkCounts[subdomain] += len(self.badUrls[key])
+
+            for key in subdomainLinkCounts:
+                infile.write(str(key) + " subdomain links processed: " + str(subdomainLinkCounts[key]) + "\n")
+
+            #page with most outlinks
+            infile.write("---- Page with most out links ----\n")
+            infile.write("URL: " + str(self.mostOutLinksPage[0] + "\n"))
+            infile.write("Number of Links: " + str(self.mostOutLinksPage[1]) + "\n")
+        except:
+            pass
+        finally:
+            print ("Finished writing analytics...")
+            print ("Closing file...")
+            infile.close()
     
 def extract_next_links(rawDataObj, mostOutLinksPage):
     outputLinks = []
