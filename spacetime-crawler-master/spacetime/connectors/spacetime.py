@@ -402,4 +402,7 @@ class ObjectlessSpacetimeConnection(object):
 
     def get_crawler_stats(self, dataframe_change):
         if "stats" in dataframe_change:
-            print "PULL complete. Number of links in server {0} (D) + {1} (UD)".format(*(dataframe_change["stats"]))
+            try:
+                print "PULL complete. Number of links in server {0} (D) + {1} (UD)".format(*(dataframe_change["stats"]))
+            except:
+                pass
