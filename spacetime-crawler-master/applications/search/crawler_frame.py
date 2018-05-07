@@ -33,7 +33,7 @@ class CrawlerFrame(IApplication):
         self.count = 0
         links = self.frame.get_new(OneTylerkvRolandfUnProcessedLink)
         if len(links) > 0:
-            print "Resuming from the previous state."
+            # print "Resuming from the previous state."
             self.download_links(links)
         else:
             l = TylerkvRolandfLink("http://www.ics.uci.edu/")
@@ -140,7 +140,8 @@ def extract_next_links(rawDataObj):
         for link in links:
             outputLinks.append(link[2])
     except etree.ParserError as e:
-        print ("Parser Error: " + str(e))
+        # print ("Parser Error: " + str(e))
+        pass
 
     try:
         print("URL contained (" + str(len(outputLinks)) + ") links")
@@ -213,6 +214,6 @@ def is_valid(url):
             return False
 
     except TypeError:
-        print ("TypeError for ", parsed)
+        # print ("TypeError for ", parsed)
         return False
 
